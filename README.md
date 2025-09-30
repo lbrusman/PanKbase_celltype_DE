@@ -13,6 +13,10 @@ Donors were filtered based on the following criteria:
 Genes were filtered based on the following criteria:
 - Must have $\geq$ 5 counts in $\geq$ 25% of samples
 
+## Contrast info
+DESeq formula:
+- `~ subtype + sample` (where `subtype` is cell type of `"interest"` vs. `"other"`)
+
 ## Output files
 - `<celltype>_marker_genes_deseq.tsv`: DESeq results comparing cell type of interest to all other cell types. Positive log2FoldChange indicates a gene is more highly expressed in that cell type compared to other cells.
 - `<celltype>_fGSEA_res_all.tsv`: Results from fGSEA for *all* pathways.
