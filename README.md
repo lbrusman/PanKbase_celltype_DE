@@ -7,7 +7,7 @@ This code uses DESeq2 to perform differential expression analysis between sample
 
 Donors were filtered based on the following criteria:
 - Must be non-diabetic and autoantibody negative (if there is autoantibody data available)
-- Samples must not be treated with any additional reagents (`treatments == "no_treatment`)
+- Samples must not be treated with any additional reagents (`treatments == "no_treatment"`)
 - Must have $\geq$ 20 cells in the cell type of interest
 
 Genes were filtered based on the following criteria:
