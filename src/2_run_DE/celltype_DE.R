@@ -32,14 +32,7 @@ cell_names <- gsub("\\)", ".", cell_names)
 
 outdir <- "/tscc/nfs/home/lebrusman/Gaulton_lab/code/pankbase_celltype_marker_genes/outputs_ND_only_250930/"
 
-
-meta <- read.table("/tscc/nfs/home/lebrusman/Gaulton_lab/code/RUVseq_pankbase/pipeline_just_for_pankbase/outputs_250923_fGSEA_all_res/meta_in_sc_250923.tsv",
-                  header = TRUE, sep = "\t")
-meta_aab <- read.table("/tscc/nfs/home/lebrusman/Gaulton_lab/code/RUVseq_pankbase/pipeline_just_for_pankbase/pankbase_sc_metadada_withcellcounts_wAAB.tsv",
-                  header = TRUE, sep = "\t")
-
-meta <- meta %>% merge(meta_aab[,c("samples", cell_names)], on = "samples")
-
+meta <- read.csv("merged_metadata.csv")
 
 meta_singleCell <- meta[which(meta$treatments == "no_treatment" & meta$diabetes_status_description == "NonDiabetic"), ]
 
